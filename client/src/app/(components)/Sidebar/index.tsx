@@ -4,7 +4,6 @@ import { useAppDispatch, useAppSelector } from "@/app/redux";
 import { setIsSidebarCollapsed } from "@/state";
 import {
   Archive,
-  CircleDollarSign,
   Clipboard,
   Layout,
   LucideIcon,
@@ -128,14 +127,14 @@ const Sidebar = () => {
         />
         <SidebarLink
           href="/expenses"
-          icon={CircleDollarSign}
+          icon={SlidersHorizontal}
           label="Expenses"
           isCollapsed={isSidebarCollapsed}
         />
       </div>
 
       {/* footer */}
-      <div>
+      <div className={`${isSidebarCollapsed ? "hidden" : "block"} mb-10`}>
         <p className="text-center text-xs text-gray-500">&copy; 2025 tsSTOCK</p>
       </div>
     </div>
