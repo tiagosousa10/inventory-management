@@ -35,7 +35,7 @@ const CardPopularProducts = () => {
                       </span>
                       <span className="mx-2">|</span>
                       <div>
-                        <Rating />
+                        <Rating rating={product.rating || 0} />
                       </div>
                     </div>
                   </div>
