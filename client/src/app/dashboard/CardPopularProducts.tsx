@@ -1,6 +1,7 @@
 import { useGetDashboardMetricsQuery } from "@/state/api";
 import { ShoppingBag } from "lucide-react";
 import React from "react";
+import Rating from "../(components)/Rating";
 
 const CardPopularProducts = () => {
   const { data: dashboardMetrics, isLoading } = useGetDashboardMetricsQuery();
@@ -33,7 +34,9 @@ const CardPopularProducts = () => {
                         ${product.price}
                       </span>
                       <span className="mx-2">|</span>
-                      <div>rating</div>
+                      <div>
+                        <Rating />
+                      </div>
                     </div>
                   </div>
                 </div>
