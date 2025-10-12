@@ -59,8 +59,17 @@ const StatCard = ({
                       detail.changePercentage
                     )}`}
                   />
+
+                  <span
+                    className={`font-medium ${getChangeColor(
+                      detail.changePercentage
+                    )}`}
+                  >
+                    {formatPercentage(detail.changePercentage)}
+                  </span>
                 </div>
               </div>
+              {index < details.length - 1 && <hr />}
             </React.Fragment>
           ))}
         </div>
