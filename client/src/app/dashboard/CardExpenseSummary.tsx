@@ -37,6 +37,13 @@ const CardExpenseSummary = () => {
     })
   );
 
+  const totalExpenses = expenseCategories.reduce(
+    (acc, category: { value: number }) => acc + category.value,
+    0
+  );
+
+  const formattedTotalExpenses = totalExpenses.toFixed(2);
+
   return (
     <div className="row-span-3 bg-white shadow-md rounded-2xl flex flex-col justify-between">
       {isLoading ? (
@@ -72,7 +79,28 @@ const CardExpenseSummary = () => {
                     </Pie>
                   </PieChart>
                 </ResponsiveContainer>
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center basis-2/5">
+                  <span className="font-bold text-xl">
+                    ${formattedTotalExpenses}
+                  </span>
+                </div>
               </div>
+
+              {/* LABELS */}
+              <ul className="flex flex-col justify-around items-center xl:items-start py-5 gap-3">
+                {expenseCategories.map((entry, index) => (
+                  <li
+                    key={`legend-${index}`}
+                    className="flex items-center text-xs"
+                  >
+                    <span
+                      style={{ backgroundColor: colors[index % colors.length] }}
+                      className="mr-2 w-3 h-3 rounded-full"
+                    ></span>
+                    {entry.name}
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </>
