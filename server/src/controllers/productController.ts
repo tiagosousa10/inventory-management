@@ -24,3 +24,27 @@ export const getProducts = async (
       .json({ error: error.message, message: "Error getting products" });
   }
 };
+
+export const createProduct = async (
+  req: Request,
+  res: Response
+): Promise<void> => {
+  try {
+    const { productId, name, price, rating, stockQuantity } = req.body;
+    const product = await prisma.products.create({
+      data: {
+        productId,
+        name,
+        price,
+        rating,
+        stockQuantity,
+      },
+    });
+
+    res.status(201).json(product);
+  } catch (error: any) {
+    res
+      .status(500)
+      .json({ error: error.message, message: "Error getting product" });
+  }
+};
