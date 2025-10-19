@@ -25,7 +25,7 @@ app.get("/hello", (req, res) => {
   res.send("Hello World!");
 });
 app.use("/dashboard", dashboardRoutes);
-app.use("/product", productRoutes);
+app.use("/products", productRoutes);
 
 /* SERVER */
 const port = Number(process.env.PORT) || 3001;
