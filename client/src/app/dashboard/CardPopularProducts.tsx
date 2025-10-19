@@ -23,7 +23,7 @@ const CardPopularProducts = () => {
                 key={product.productId}
                 className="flex items-center justify-between gap-3 px-5 py-7 border-b"
               >
-                <div className="flex items-center gap-3">
+                <div className="flex  items-center gap-3">
                   <div>img</div>
                   <div className="flex flex-col justify-between gap-1">
                     <div className="font-bold text-gray-700 ">
@@ -34,7 +34,7 @@ const CardPopularProducts = () => {
                         ${product.price}
                       </span>
                       <span className="mx-2">|</span>
-                      <div>
+                      <div className="flex">
                         <Rating rating={product.rating || 0} />
                       </div>
                     </div>
