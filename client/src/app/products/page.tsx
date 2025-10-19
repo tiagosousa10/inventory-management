@@ -84,6 +84,9 @@ const Products = () => {
           ))
         )}
       </div>
+
+      {/* modal */}
+      <div></div>
     </div>
   );
 };
